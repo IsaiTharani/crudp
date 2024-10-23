@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <style>
+        body {
+            background-color:black;
+        }
+        form {
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 8px;
+            width:300px;
+            margin: auto;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+        }
+        .myDiv {
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        Username: <input type="text" name="name" required><br><br>
+        Password: <input type="text" name="password" required><br><br>
+        <div class="myDiv">
+            <a href="/appPage">
+            <input type="submit" name="login"  value="login"><br>
+            </a>
+            <a href="/signup">Create new Account</a>
+        </div>
+    </form>
+</body>
+</html>

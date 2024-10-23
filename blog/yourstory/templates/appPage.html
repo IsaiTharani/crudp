@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center; 
+            height: 100vh;
+            background-color: #f0f0f0; 
+            margin: 0; 
+        }
+        .para {
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 500px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        textarea {
+            padding: 10px;  /* Adjust padding as needed */
+            background-color: rgb(201, 192, 181);
+            width: 96%;     /* Full width of the parent */
+            height: 200px;   /* Adjust height as needed */
+            border-radius: 5px;
+            border: none;    /* Remove border */
+            resize: none; 
+            margin-bottom: 10px; /* Space between textarea and button */
+            font-family: inherit; /* Use the same font as the rest */
+        }
+        input[type="submit"] {
+            padding: 10px 15px; /* Add padding */
+            background-color: #28a745; /* Green background */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth background change */
+        }
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    {{Username}} <!-- Display the username -->
+    <br><br>
+    <form action="/appPage" method="POST">
+        {% csrf_token %}
+        <div class="para">
+            <textarea name="story" placeholder="Add your story here..." required></textarea>
+            <input type="submit" name="post" value="Post">
+        </div>
+    </form>
+</body>
+</html>

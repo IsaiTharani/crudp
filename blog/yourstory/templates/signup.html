@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+    <style>
+        body {
+            background-color: #000000; /* Set your background color here */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: bisque;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            margin-bottom: 15px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        input[type="submit"], input[type="reset"] {
+            margin-right: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background-color: #dc3545;
+        }
+        a {
+            color: #007BFF;
+            text-align: center;
+            display: block;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="signup" method="post">
+        {% csrf_token %}
+        <label for="name">Username:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="password2">Re-enter Password:</label>
+        <input type="password" name="password2" id="password2" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <div style="display: flex; justify-content: space-between;">
+            <input type="submit" name="signup" value="Sign-up">
+            <input type="reset" name="clear" value="Clear">
+        </div>
+
+        <a href="/">Already have an account?</a>
+    </form>
+</body>
+</html>
